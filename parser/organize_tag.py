@@ -3,26 +3,11 @@ import csv
 import nltk
 import re
 import os
+from checker import *
+from saver import save_unknown_tags
+from tag_file_loader import load_tagset
 
-def is_special(string):
-	pattern = re.compile(r"^[^\w\s]+$")
-	return bool(re.match(pattern, string))
-
-def is_int(param):
-    try:
-        int(param)
-        return True
-    except:
-        return False
-
-datas = {}
-with open("dataset1.csv", "r") as inFile:
-    inFile_data = csv.reader(inFile)
-    for i in inFile_data:
-        end = len(i)
-        for j in range(0, end, 2):
-            datas[i[j].lower().strip()] = i[j+1]
-# lines = 0
+datas = load_tagset("dataset1.csv")
 untagged = []
 untagged_in_file = []
 
@@ -65,11 +50,10 @@ for dataset_file in files:
                     tagged_writer.writerow(flat_data)
                 counter += 1
 
-print(tagged)
-# print(lines)
 
-with open("../Untagged_Word/untagged.csv", "a") as untagged_file:
-    untagged_writer = csv.writer(untagged_file)
-    for i in untagged:
-        if i not in untagged_in_file:
-            untagged_writer.writerow([i])
+#Save unknown tags
+save_unknown_tags(
+    filepath="../Untagged_Word/untagged.csv",
+    untagged=untagged,
+    untagged_in_file=untagged_in_file
+)
