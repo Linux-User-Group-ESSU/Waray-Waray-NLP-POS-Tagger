@@ -20,7 +20,7 @@ def tosentence(filepath, resource_folder, destination_folder = None):
                             for sentences in data:
                                 sentence = sentences.replace("\n", "").replace('“', "").replace('”', "").replace('"', "").strip()
                                 if not sentence: continue
-                                new_text.write(f"{sentence}\n")
+                                new_text.write(f"{sentence}.\n")
                 counter += 1
 
 if __name__=="__main__":
