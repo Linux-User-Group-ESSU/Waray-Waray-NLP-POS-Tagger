@@ -1,0 +1,37 @@
+Official Waray Tags
+
+DT: Tigpananglit(Determiners) 
+
+NN : Tigngaran(Noun)
+
+VB : Tigpanhitabu(Verb)
+
+MDFR : Tigrulidung(Modifier,Adverb,Adjective,Affix)
+
+PNN : Tigsaliwan(Pronoun)
+
+CLTC : Kapinit(Clitic)
+
+NMBR : Tig-Ihap (Numerals)
+
+CJTN : Tigusmpay(Linker,Conjuction)
+
+IJTN : Tigkalas(Interjection, Idiomatic Expression)
+
+? :Punctuations
+
+FW : Foreign
+
+xx : Unknown
+
+
+Added Tags
+
+RP: Particle
+
+PSTN: Preposition
+
+NTRG: Interrogative
+
+
+
