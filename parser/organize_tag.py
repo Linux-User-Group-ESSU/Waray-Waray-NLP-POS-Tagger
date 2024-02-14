@@ -40,8 +40,9 @@ for dataset_file in files:
             reader = dataset.readlines()
             counter = 0
             for i in reader:
-                if counter != 1 or counter != 2:
-                    print(counter)
+                #skip the author and published by
+                if counter >= 1 and counter <= 3: pass
+                else:
                     # lines += 1
                     i = i.strip("\n")
                     token = nltk.word_tokenize(i)
