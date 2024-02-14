@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import csv
 import nltk
-import re
 import os
 from checker import *
 from saver import save_unknown_tags
@@ -11,6 +10,7 @@ datas = load_tagset("dataset1.csv")
 untagged = []
 untagged_in_file = []
 
+#Get all the articles filename
 files = os.listdir("../SHIN/articles")
 for dataset_file in files:
     with open(f"../Untagged_Word/untagged.csv", "r") as untagged_data:
@@ -34,7 +34,8 @@ for dataset_file in files:
                     tagged = {}
                     for j in token:
                         # if "." in j : lines += 1
-                        if is_special(j): pass
+                        if is_special(j):
+                            tagged[j] = "?"
                         else:
                             word = j.lower().strip().replace(".", "").replace(",", "")
                             if word in datas:
