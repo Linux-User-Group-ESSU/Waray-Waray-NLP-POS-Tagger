@@ -11,7 +11,7 @@ untagged = []
 untagged_in_file = []
 
 #Get all the articles filename
-files = os.listdir("../SHIN/articles")
+files = os.listdir("../New_Article")
 for dataset_file in files:
     with open(f"../Untagged_Word/untagged.csv", "r") as untagged_data:
         reader = csv.reader(untagged_data)
@@ -21,7 +21,7 @@ for dataset_file in files:
     output_file = dataset_file.replace(".txt", "")
     with open(f"../Tagged_Article/{output_file}.csv", "w") as tagged_file:
         tagged_writer = csv.writer(tagged_file)
-        with open(f"../SHIN/articles/{dataset_file}", "r") as dataset:
+        with open(f"../New_Article/{dataset_file}", "r") as dataset:
             reader = dataset.readlines()
             counter = 0
             for i in reader:
@@ -29,7 +29,7 @@ for dataset_file in files:
                 if counter >= 1 and counter <= 3: pass
                 else:
                     # lines += 1
-                    i = i.strip("\n").replace('“', "").replace('”', "").replace('"', "").strip()
+                    i = i.strip("\n")
                     token = nltk.word_tokenize(i)
                     tagged = []
                     for j in token:
@@ -43,7 +43,7 @@ for dataset_file in files:
                             elif is_int(word):
                                 tagged.append(f"{word}|NMBR")
                             else:
-                                tagged.append(f"{word}|FX")
+                                tagged.append(f"{word}|XX")
                                 if word not in untagged:
                                     untagged.append(word)
                     
