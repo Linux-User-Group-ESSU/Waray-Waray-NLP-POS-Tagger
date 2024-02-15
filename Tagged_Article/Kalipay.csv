@@ -1,34 +1,34 @@
-an,DT,balos,FX,hiton,FX,kalipay,NN
-usa,NMBR,hadto,PNN,nagbabaha,FX,ginlunupan,FX,an,DT,bug-os,MDFR,nga,LNKR,tuna,NN,damo-damoan,FX,nagkalulukba,FX,mga,MDFR,kahoy,NN
-may,MDFR,ada,IJTN,usa,NMBR,mga,MDFR,amó,FX,nga,LNKR,namimiling,VB,hin,FX,anód,FX,saging,NN,dara,VB,niya,PNN,parakol,FX
-tabagi,FX,gad,CLTC,ako,FX,siring,VB,han,DT,tingog,NN
-hin-o,PNN,daw,MDFR,adi,PNN,siring,VB,ni,DT,amó,FX,ha,DT,iya,PNN,kalugaringon,NN
-nakit-an,VB,ni,DT,amó,FX,an,DT,buaya,NN,nga,LNKR,naiipit,FX,han,DT,kahoy,NN,dako,MDFR,nakimaluoy,FX,kan,DT,tabagi,FX,gad,CLTC,ako,FX,kay,CJTN,magbabalos,FX,ha,DT,imo,FX,kun,FX,bubuligan,VB
-ngalaong,IDEX,han,DT,amó,FX,diri,MDFR,kay,CJTN,imo,FX,ako,FX,kakaonon,FX
-diri,MDFR,daw,MDFR,siring,VB,han,DT,buaya,NN,magbabalos,FX,ako—tatagan,FX,ta,PNN,ikaw,FX,hin,FX,abilidad,FX,kun,FX,imo,FX,ako,FX,tatabagan,FX
-amo,MDFR,adto,PNN,kay,CJTN,naluoy,FX,hiya,PNN,iya,PNN,gin-utod,FX,an,DT,naka-ipit,FX,nga,LNKR,kahoy,NN,baga,MDFR,nakaginhawa,FX,na,RP,buaya,NN,l,FX,ong,FX,sige,MDFR,kuno,CLTC,sakay,VB,didi,PNN,hit,FX,ak,PNN,bungkog,FX
-kay,CJTN,hiluag-luagan,FX,an,DT,tubig,NN,han,DT,babaha,FX,sumakay,VB,amó,FX,ha,DT,bawbaw,MDFR,buaya,NN
-han,DT,nakadto,VB,na,RP,hira,PNN,ha,DT,butnga,MDFR,nasiring,VB,an,DT,buaya,NN,nga,LNKR,laong,FX,oras,NN,mo,FX,amó,FX,yana,NN,kay,CJTN,magutom,MDFR,hin,FX,duro,FX,mamay,IJTN,ba,CLTC,kaipit,FX,ko,PNN,kahoy,NN,hapit,VB,gud,CLTC,magsemana,FX,waray,MDFR,ak,PNN,kakaonon,FX
+an|DT,balos|FX,hiton|FX,kalipay|NN
+usa|NMBR,hadto|PNN,nagbabaha|FX,",|?",ginlunupan|FX,an|DT,bug-os|MDFR,nga|LNKR,tuna|NN,.|?,damo-damoan|FX,an|DT,nagkalulukba|FX,nga|LNKR,mga|MDFR,kahoy|NN,.|?
+may|MDFR,ada|IJTN,usa|NMBR,mga|MDFR,amó|FX,nga|LNKR,namimiling|VB,hin|FX,anód|FX,nga|LNKR,saging|NN,.|?,may|MDFR,dara|VB,niya|PNN,nga|LNKR,parakol|FX,.|?
+tabagi|FX,gad|CLTC,ako|FX,!|?,siring|VB,han|DT,tingog|NN,.|?
+hin-o|PNN,daw|MDFR,adi|PNN,?|?,siring|VB,ni|DT,amó|FX,ha|DT,iya|PNN,kalugaringon|NN,.|?
+nakit-an|VB,ni|DT,amó|FX,an|DT,buaya|NN,nga|LNKR,naiipit|FX,han|DT,kahoy|NN,nga|LNKR,dako|MDFR,.|?,nakimaluoy|FX,kan|DT,amó|FX,an|DT,buaya|NN,:|?,tabagi|FX,gad|CLTC,ako|FX,",|?",amó|FX,!|?,kay|CJTN,magbabalos|FX,gad|CLTC,ako|FX,ha|DT,imo|FX,kun|FX,imo|FX,ako|FX,bubuligan|VB,.|?
+ngalaong|IDEX,han|DT,amó|FX,:|?,diri|MDFR,kay|CJTN,imo|FX,ako|FX,kakaonon|FX,!|?
+diri|MDFR,daw|MDFR,",|?",siring|VB,han|DT,buaya|NN,.|?,magbabalos|FX,ako—tatagan|FX,ta|PNN,ikaw|FX,hin|FX,abilidad|FX,kun|FX,imo|FX,ako|FX,tatabagan|FX,.|?
+amo|MDFR,adto|PNN,.|?,kay|CJTN,naluoy|FX,hiya|PNN,",|?",iya|PNN,gin-utod|FX,an|DT,naka-ipit|FX,nga|LNKR,kahoy|NN,",|?",baga|MDFR,nakaginhawa|FX,na|RP,an|DT,buaya|NN,.|?,nga|LNKR,l|FX,’|?,ong|FX,",|?",sige|MDFR,",|?",kuno|CLTC,",|?",sakay|VB,didi|PNN,hit|FX,’|?,ak|PNN,’|?,bungkog|FX,.|?
+kay|CJTN,hiluag-luagan|FX,an|DT,tubig|NN,han|DT,babaha|FX,",|?",sumakay|VB,an|DT,amó|FX,ha|DT,bawbaw|MDFR,han|DT,buaya|NN,.|?
+han|DT,nakadto|VB,na|RP,hira|PNN,ha|DT,butnga|MDFR,",|?",nasiring|VB,na|RP,an|DT,buaya|NN,",|?",nga|LNKR,laong|FX,:|?,oras|NN,mo|FX,na|RP,",|?",amó|FX,",|?",yana|NN,kay|CJTN,magutom|MDFR,na|RP,hin|FX,duro|FX,.|?,mamay|IJTN,ba|CLTC,",|?",an|DT,kaipit|FX,ko|PNN,han|DT,kahoy|NN,hapit|VB,gud|CLTC,magsemana|FX,",|?",waray|MDFR,ak|PNN,’|?,kakaonon|FX,.|?
 
-nasiring,VB,ka,PNN,nga,LNKR,magbabalos,FX,ha,DT,akon,PNN,baton,VB,ni,DT,amó,FX
-kay,CJTN,ano,PNN,it,FX,balos,FX,hit,FX,kalipay,NN,nasiring,VB,na,RP,an,DT,buaya,NN
-nga,LNKR,laong,FX,han,DT,amó,FX,ay,FX,daw,MDFR,anay,MDFR,ano,PNN,ba,CLTC,it,FX,balos,FX,hit,FX,kalipay,NN,ayaw,MDFR,mapakiana,VB,kita,FX
+nasiring|VB,ka|PNN,nga|LNKR,magbabalos|FX,ka|PNN,ha|DT,akon|PNN,.|?,baton|VB,ni|DT,amó|FX,.|?
+kay|CJTN,ano|PNN,it|FX,’|?,balos|FX,hit|FX,’|?,kalipay|NN,?|?,nasiring|VB,na|RP,an|DT,buaya|NN,.|?
+nga|LNKR,laong|FX,han|DT,amó|FX,",|?",ay|FX,’|?,daw|MDFR,anay|MDFR,.|?,ano|PNN,ba|CLTC,it|FX,’|?,balos|FX,hit|FX,’|?,kalipay|NN,?|?,ayaw|MDFR,daw|MDFR,anay|MDFR,",|?",mapakiana|VB,kita|FX,.|?
 
-may,MDFR,nahaanod,FX,nga,LNKR,alat,NN,ira,PNN,ginpakianhan,VB,ano,PNN,it,FX,balos,FX,hit,FX,kalipay,NN
+may|MDFR,nahaanod|FX,nga|LNKR,alat|NN,.|?,ira|PNN,ginpakianhan|VB,:|?,alat|NN,",|?",ano|PNN,it|FX,’|?,balos|FX,hit|FX,’|?,kalipay|NN,?|?
 
-nga,LNKR,laong,FX,it,FX,balos,FX,hit,FX,kalipay,NN,kasakit,FX,kay,CJTN,hadto,PNN,han,DT,baga,MDFR,bag-o,MDFR,pa,CLTC,ako,FX
-pirmi,FX,ak,PNN,sinaklay,FX,han,DT,akon,PNN,agaron,FX,yana,NN,nga,LNKR,dunot,FX,na,RP,iginlabay,FX,iginlabog,FX
-ak,PNN,nganhi,PNN,ha,DT,tubig,NN,it,FX,balos,FX,hit,FX,kalipay,NN,kasakit,FX
-ito,FX,na,RP,man,CLTC,oras,NN,kakaonon,FX,tan,FX,a,FX,ikaw,FX,nasiring,VB,an,DT,buaya,NN
+nga|LNKR,laong|FX,",|?",it|FX,balos|FX,hit|FX,’|?,kalipay|NN,",|?",kasakit|FX,.|?,kay|CJTN,hadto|PNN,han|DT,baga|MDFR,bag-o|MDFR,pa|CLTC,ako|FX,",|?"
+pirmi|FX,ak|PNN,’|?,sinaklay|FX,",|?",han|DT,akon|PNN,agaron|FX,.|?,yana|NN,nga|LNKR,dunot|FX,na|RP,ak|PNN,’|?,iginlabay|FX,ak|PNN,’|?,",|?",iginlabog|FX
+ak|PNN,’|?,nganhi|PNN,ha|DT,tubig|NN,.|?,it|FX,’|?,balos|FX,hit|FX,kalipay|NN,",|?",kasakit|FX,.|?
+ito|FX,na|RP,man|CLTC,!|?,oras|NN,na|RP,.|?,kakaonon|FX,tan|FX,a|FX,ikaw|FX,",|?",nasiring|VB,an|DT,buaya|NN,.|?
 
-nga,LNKR,laong,FX,han,DT,amo,MDFR,ay,FX,daw,MDFR,anay,MDFR,mapakiana,VB,pa,CLTC,kita,FX
-may,MDFR,ada,IJTN,lusong,FX,liwat,CLTC,nga,LNKR,naanod,FX
-pakiana,VB,liwat,CLTC,hi,DT,amo,MDFR,han,DT,lusong,FX,ano,PNN,it,FX,balos,FX,hit,FX
-kalipay,NN
+nga|LNKR,laong|FX,han|DT,amo|MDFR,:|?,ay|FX,’|?,daw|MDFR,anay|MDFR,.|?,mapakiana|VB,pa|CLTC,kita|FX,.|?
+may|MDFR,ada|IJTN,lusong|FX,liwat|CLTC,nga|LNKR,naanod|FX,.|?
+pakiana|VB,liwat|CLTC,hi|DT,amo|MDFR,han|DT,lusong|FX,:|?,lusong|FX,",|?",ano|PNN,it|FX,’|?,balos|FX,hit|FX,’|?
+kalipay|NN,?|?
 
-nga,LNKR,laong,FX,han,DT,lusong,FX,it,FX,balos,FX,hit,FX,kalipay,NN,kasakit,FX,kay,CJTN,baga,MDFR,maupay,MDFR,pa,CLTC,ak,PNN,diri,MDFR
-nabubuho,FX,pirmi,FX,ak,PNN,inuupay,FX,han,DT,agaron,FX,iginsasakob,FX,ako,FX,yana,NN,nga,LNKR,nabuho,FX,na,RP
-iginlabog,FX,ak,PNN,nganhi,PNN,ha,DT,tubig,NN,it,FX,balos,FX,hit,FX,kalipay,NN,kasakit,FX
+nga|LNKR,laong|FX,han|DT,lusong|FX,:|?,it|FX,balos|FX,hit|FX,’|?,kalipay|NN,",|?",kasakit|FX,.|?,kay|CJTN,han|DT,baga|MDFR,maupay|MDFR,pa|CLTC,ak|PNN,’|?,",|?",diri|MDFR,pa|CLTC,ak|PNN,’|?
+nabubuho|FX,",|?",pirmi|FX,ak|PNN,’|?,inuupay|FX,han|DT,ak|PNN,’|?,agaron|FX,.|?,iginsasakob|FX,ako|FX,.|?,yana|NN,nga|LNKR,nabuho|FX,na|RP,ak|PNN,’|?
+iginlabog|FX,ak|PNN,’|?,nganhi|PNN,ha|DT,tubig|NN,.|?,it|FX,’|?,balos|FX,hit|FX,kalipay|NN,",|?",kasakit|FX,.|?
 
-ito,FX,na,RP,man,CLTC,oras,NN,kakaonon,FX,tan,FX,a,FX,ikaw,FX,nasiring,VB,an,DT,buaya,NN
-kinaon,VB,han,DT,buaya,NN,an,DT,amó,FX
+ito|FX,na|RP,man|CLTC,!|?,oras|NN,na|RP,.|?,kakaonon|FX,tan|FX,a|FX,ikaw|FX,",|?",nasiring|VB,an|DT,buaya|NN,.|?
+kinaon|VB,han|DT,buaya|NN,an|DT,amó|FX,.|?

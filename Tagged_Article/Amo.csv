@@ -1,21 +1,21 @@
-an,DT,amo,MDFR,ngan,CJTN,uran,NN
-may,MDFR,tiyempo,FX,nga,LNKR,usa,NMBR,tawo,NN,ngan,CJTN,hin,FX,amó,FX,nagdidinebate,FX,kun,FX,hain,PNN
-nagtikang,VB,an,DT,uran,NN
-inin,FX,nasiring,VB,an,DT,tawo,NN,nga,LNKR,tikang,MDFR,didi,PNN,ha,DT,langit,NN,it,FX,uran,NN
+an|DT,amo|MDFR,ngan|CJTN,uran|NN
+may|MDFR,tiyempo|FX,nga|LNKR,usa|NMBR,nga|LNKR,tawo|NN,ngan|CJTN,hin|FX,amó|FX,nagdidinebate|FX,kun|FX,hain|PNN
+nagtikang|VB,an|DT,uran|NN,.|?
+inin|FX,",|?",nasiring|VB,an|DT,tawo|NN,nga|LNKR,tikang|MDFR,didi|PNN,ha|DT,langit|NN,it|FX,’|?,uran|NN,.|?
 
-nasiring,VB,man,CLTC,an,DT,amó,FX,didi,PNN,gud,CLTC,tikang,MDFR,ha,DT,tuna,NN,kay,CJTN,hit,FX,akon,PNN
-paglingkod,FX,adi,PNN,ako,FX
-kahupit,FX,diri,MDFR,adi,PNN,ha,DT,ulo,NN,anay,MDFR,hit,FX,akon,PNN,putik,FX,it,FX
-adi,PNN,ha,DT,igbaw,MDFR
+nasiring|VB,man|CLTC,an|DT,amó|FX,",|?",didi|PNN,gud|CLTC,",|?",tikang|MDFR,gud|CLTC,ha|DT,tuna|NN,kay|CJTN,hit|FX,’|?,akon|PNN
+paglingkod|FX,",|?",adi|PNN,ako|FX
+kahupit|FX,",|?",diri|MDFR,adi|PNN,ha|DT,ulo|NN,.|?,adi|PNN,anay|MDFR,hit|FX,’|?,akon|PNN,putik|FX,it|FX,’|?,kahupit|FX,",|?",diri|MDFR
+adi|PNN,ha|DT,igbaw|MDFR,.|?
 
-sige,MDFR,siring,VB,han,DT,tawo,NN,hulton,VB,ta,PNN,nga,LNKR,umuran,FX,basi,CJTN,aton,FX,makit-an,VB,kun,FX
-hain,PNN,gud,CLTC,ini,PNN,nagtitikang,VB
+sige|MDFR,",|?",siring|VB,han|DT,tawo|NN,",|?",hulton|VB,ta|PNN,nga|LNKR,umuran|FX,basi|CJTN,aton|FX,makit-an|VB,kun|FX
+hain|PNN,gud|CLTC,ini|PNN,nagtitikang|VB,.|?
 
-nagpustahay,FX,hira,PNN,kun,FX,an,DT,amo,MDFR,mapirdi,FX,kakaonun,FX,hiya,PNN
+nagpustahay|FX,hira|PNN,kun|FX,an|DT,amo|MDFR,an|DT,mapirdi|FX,",|?",kakaonun|FX,hiya|PNN,.|?
 
-katapos,MDFR,han,DT,ira,PNN,pustahay,FX,umuran,FX,ngan,CJTN,nakakita,VB,hira,PNN,kun,FX,diin,PNN,tikang,MDFR,an,DT,uran,NN
+katapos|MDFR,han|DT,ira|PNN,pustahay|FX,",|?",umuran|FX,.|?,ngan|CJTN,nakakita|VB,hira|PNN,kun|FX,diin|PNN,tikang|MDFR,an|DT,uran|NN,.|?
 
-naihaw,FX,gud,CLTC,man,CLTC,an,DT,amo,MDFR
+naihaw|FX,gud|CLTC,man|CLTC,an|DT,amo|MDFR,.|?
 
-han,DT,ginkikinaon,FX,an,DT,tawo,NN,amó,FX,sumiring,VB,ini,PNN
-kairo,MDFR,kakarag,VB,han,DT,rason,NN,amo,MDFR,ginkaragan,FX,la,CLTC
+han|DT,ginkikinaon|FX,han|DT,an|DT,tawo|NN,an|DT,amó|FX,",|?",sumiring|VB,ini|PNN
+kairo|MDFR,",|?",kakarag|VB,han|DT,rason|NN,",|?",han|DT,amo|MDFR,ginkaragan|FX,la|CLTC,.|?

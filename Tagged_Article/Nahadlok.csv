@@ -1,34 +1,34 @@
-nahadlok,VB,ako,FX
-ayaw,MDFR,kahadlok,VB,inday,NN,kun,FX,ano,PNN,an,DT,karuyag,MDFR,han,DT,ispiritu,FX,bubuhaton,VB,nira,PNN
+nahadlok|VB,ako|FX
+ayaw|MDFR,kahadlok|VB,",|?",inday|NN,.|?,kun|FX,ano|PNN,an|DT,karuyag|MDFR,han|DT,ispiritu|FX,",|?",bubuhaton|VB,nira|PNN
 
-anon,FX,mahihitabo,FX,ha,DT,akon,PNN
+anon|FX,mahihitabo|FX,ha|DT,akon|PNN,?|?
 
-babayaan,VB,ta,PNN,ikaw,FX,didto,FX,ha,DT,puno,MDFR,han,DT,balete,FX,lingkod,VB,ngan,CJTN,dadad-on,VB,ka,PNN,langit,NN,ilarom,MDFR,hin,FX,tuna,NN
-kay-ano,FX
+babayaan|VB,ta|PNN,ikaw|FX,didto|FX,ha|DT,puno|MDFR,han|DT,balete|FX,.|?,lingkod|VB,didto|FX,ngan|CJTN,dadad-on|VB,ka|PNN,ha|DT,langit|NN,ngan|CJTN,ha|DT,ilarom|MDFR,hin|FX,tuna|NN,.|?
+kay-ano|FX,?|?
 
-para,CJTN,ha,DT,bag-o,MDFR,nga,LNKR,kinabuhi,NN
+para|CJTN,ha|DT,bag-o|MDFR,nga|LNKR,kinabuhi|NN
 
-maul-ol,FX,ba,CLTC,to,FX
+maul-ol|FX,ba|CLTC,to|FX,?|?
 
-diri,MDFR,ko,PNN,na,RP,mahinumduman,FX,maiha,MDFR,nga,LNKR,naglabay,NN,an,DT,akon,PNN,panahon,NN,ayaw,MDFR,kahadlok,VB,inday,NN,dadad-on,VB,ka,PNN,nira,PNN,ha,DT,bag-o,MDFR,kalibutan,NN
+diri|MDFR,ko|PNN,na|RP,mahinumduman|FX,.|?,maiha|MDFR,na|RP,nga|LNKR,naglabay|NN,an|DT,akon|PNN,panahon|NN,.|?,ayaw|MDFR,kahadlok|VB,",|?",inday|NN,.|?,dadad-on|VB,ka|PNN,nira|PNN,ha|DT,bag-o|MDFR,nga|LNKR,kalibutan|NN,.|?
 
-kay,CJTN,amo,MDFR,ito,FX,nga,LNKR,nakakalupad,FX,ka,PNN
+kay|CJTN,amo|MDFR,ito|FX,nga|LNKR,nakakalupad|FX,ka|PNN,?|?
 
-oo,MDFR,inday,NN,paglupad,FX,ngan,CJTN,damo,MDFR,pa,CLTC,sumangpot,FX,na,RP,ako,FX,ha,DT,pinakahalarum,FX,hin,FX,dagat,NN,mga,MDFR,sulod,VB,lawas,NN,han,DT,tawo,NN,nakaka-istorya,FX,ko,PNN,an,DT,ispiritu,FX,dinhi,PNN,iba,MDFR,nga,LNKR,kalibutan,NN,nakaabot,FX,lugar,NN,diri,MDFR,makakadtuan,FX,gingugul-an,FX
+oo|MDFR,",|?",inday|NN,.|?,paglupad|FX,ngan|CJTN,damo|MDFR,pa|CLTC,sumangpot|FX,na|RP,ako|FX,ha|DT,pinakahalarum|FX,hin|FX,dagat|NN,",|?",ha|DT,mga|MDFR,sulod|VB,hin|FX,lawas|NN,han|DT,tawo|NN,.|?,nakaka-istorya|FX,ko|PNN,an|DT,mga|MDFR,ispiritu|FX,dinhi|PNN,ngan|CJTN,ha|DT,iba|MDFR,nga|LNKR,kalibutan|NN,.|?,nakaabot|FX,na|RP,ako|FX,ha|DT,mga|MDFR,lugar|NN,nga|LNKR,diri|MDFR,na|RP,makakadtuan|FX,hin|FX,mga|MDFR,tawo|NN,.|?,gingugul-an|FX,na|RP,ako|FX,.|?
 
-anhi,FX,na,RP,kita,FX
+anhi|FX,na|RP,kita|FX,.|?
 
-pamati,NN,ha,DT,mga,MDFR,ispiritu,FX,tutut-duan,FX,ka,PNN,nira,PNN,sugad,VB,han,DT,ira,PNN,pag,FX,tut-do,FX,akon,PNN
+pamati|NN,ha|DT,mga|MDFR,ispiritu|FX,.|?,tutut-duan|FX,ka|PNN,nira|PNN,sugad|VB,han|DT,ira|PNN,pag|FX,tut-do|FX,ha|DT,akon|PNN,.|?
 
-magkikita,VB,pa,CLTC,ba,CLTC,kita,FX
+magkikita|VB,pa|CLTC,ba|CLTC,kita|FX,?|?
 
-diri,MDFR,kita,FX,maaram,MDFR,kung,FX,ano,PNN,an,DT,karuyag,MDFR,han,DT,mga,MDFR,spiritu,FX,lakat,VB,na,RP,inday,NN,igbibilin,FX,ko,PNN,tawo,NN,ha,DT,imo,FX
-makadi,VB,na,RP,ako,FX,lola,NN
+diri|MDFR,kita|FX,maaram|MDFR,kung|FX,ano|PNN,an|DT,karuyag|MDFR,han|DT,mga|MDFR,spiritu|FX,.|?,lakat|VB,na|RP,",|?",inday|NN,.|?,igbibilin|FX,ko|PNN,na|RP,an|DT,mga|MDFR,tawo|NN,ha|DT,imo|FX
+makadi|VB,na|RP,ako|FX,",|?",lola|NN,.|?
 
-kumusog,FX,an,DT,hangin,NN,palibot,NN,han,DT,bata,NN,nga,LNKR,nakalingkod,FX,ha,DT,may,MDFR,balete,FX,naglabay,NN,adlaw,NN,ngadto,FX,sinama,FX,waray,MDFR,kikiwa,FX,mga,MDFR,tawo,NN,maaram,MDFR,diri,MDFR,pwede,MDFR,hiya,PNN,labtan,FX,iya,PNN,ginbubuhat,VB,amagahon,FX,bisperas,FX,gab-i,NN,tumukdaw,FX,ngan,CJTN,nagpasalamat,VB,hin,FX,saba,VB,ispiritu,FX
+kumusog|FX,an|DT,hangin|NN,palibot|NN,han|DT,bata|NN,nga|LNKR,nakalingkod|FX,ha|DT,may|MDFR,balete|FX,.|?,naglabay|NN,an|DT,adlaw|NN,ngadto|FX,ha|DT,sinama|FX,nga|LNKR,waray|MDFR,kikiwa|FX,an|DT,bata|NN,.|?,an|DT,mga|MDFR,tawo|NN,maaram|MDFR,nga|LNKR,diri|MDFR,pwede|MDFR,hiya|PNN,pwede|MDFR,labtan|FX,ha|DT,iya|PNN,ginbubuhat|VB,.|?,ha|DT,amagahon|FX,han|DT,bisperas|FX,han|DT,gab-i|NN,",|?",tumukdaw|FX,an|DT,bata|NN,ngan|CJTN,nagpasalamat|VB,hin|FX,waray|MDFR,saba|VB,ha|DT,mga|MDFR,ispiritu|FX,.|?
 
-nakit-an,VB,na,RP,han,DT,iya,PNN,mga,MDFR,mata,NN,an,DT,daan,MDFR,nga,LNKR,kinabuhi,NN,malain,MDFR,pamati,NN
+nakit-an|VB,na|RP,han|DT,iya|PNN,mga|MDFR,mata|NN,an|DT,iya|PNN,daan|MDFR,nga|LNKR,kinabuhi|NN,.|?,malain|MDFR,na|RP,iya|PNN,pamati|NN,.|?
 
-mayda,FX,pa,CLTC,hiya,PNN,trabaho,NN,nga,LNKR,kinahanglan,VB,buhaton,VB
+mayda|FX,pa|CLTC,hiya|PNN,trabaho|NN,nga|LNKR,kinahanglan|VB,buhaton|VB,.|?
 
-padi,NN,an,DT,iya,PNN,bugto,NN
+padi|NN,an|DT,iya|PNN,bugto|NN,.|?
