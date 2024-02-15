@@ -29,26 +29,25 @@ for dataset_file in files:
                 if counter >= 1 and counter <= 3: pass
                 else:
                     # lines += 1
-                    i = i.strip("\n")
+                    i = i.strip("\n").replace('“', "").replace('”', "").replace('"', "").strip()
                     token = nltk.word_tokenize(i)
-                    tagged = {}
+                    tagged = []
                     for j in token:
                         # if "." in j : lines += 1
                         if is_special(j):
-                            tagged[j] = "?"
+                            tagged.append(f"{j}|?")
                         else:
                             word = j.lower().strip().replace(".", "").replace(",", "")
                             if word in datas:
-                                tagged[word] = datas[word]
+                                tagged.append(f"{word}|{datas[word]}")
                             elif is_int(word):
-                                tagged[word] = "NMBR"
+                                tagged.append(f"{word}|NMBR")
                             else:
-                                tagged[word] = "FX"
+                                tagged.append(f"{word}|FX")
                                 if word not in untagged:
                                     untagged.append(word)
                     
-                    flat_data = data_list = [item for pair in tagged.items() for item in pair]
-                    tagged_writer.writerow(flat_data)
+                    tagged_writer.writerow(tagged)
                 counter += 1
 
 
