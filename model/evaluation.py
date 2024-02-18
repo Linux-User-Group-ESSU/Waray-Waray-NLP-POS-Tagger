@@ -1,6 +1,7 @@
 from sklearn.model_selection import KFold
 from collections import defaultdict
 from training import train_hmm, load_dataset_from_csv
+import dill
 
 def evaluate_hmm_tagger(tagged_sentences, num_folds=5):
     # Initialize a KFold cross-validator. All folds are used for validation except num_folds-1
@@ -10,21 +11,21 @@ def evaluate_hmm_tagger(tagged_sentences, num_folds=5):
     # Create a dictionary where the data is a float initialize to 0.0
     overall = defaultdict(float)
 
-    for train_index, test_index in kf.split(tagged_sentences):
-        # Test and train data
-        train = [tagged_sentences[i] for i in train_index]
-        test = [tagged_sentences[i] for i in test_index]
+    #Open the model
+    with open("hmm_waray_tagger.pickle", "rb") as model_tagger:
+        tagger = dill.load(model_tagger)
+        for _, test_index in kf.split(tagged_sentences):
+            # Test and train data
+            test = [tagged_sentences[i] for i in test_index]
 
-        hmm_tagger = train_hmm(train)
+            accuracy = tagger.accuracy(test)
 
-        accuracy = hmm_tagger.accuracy(test)
+            # Update overall accuracy
+            overall['accuracy'] += accuracy
 
-        # Update overall accuracy
-        overall['accuracy'] += accuracy
-
-    # Calculate average evaluation metrics over all folds
-    num_test_folds = len(list(kf.split(tagged_sentences)))
-    overall['accuracy'] /= num_test_folds
+        # Calculate average evaluation metrics over all folds
+        num_test_folds = len(list(kf.split(tagged_sentences)))
+        overall['accuracy'] /= num_test_folds
 
     return overall
 
