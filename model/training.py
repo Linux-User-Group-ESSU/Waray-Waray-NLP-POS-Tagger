@@ -3,22 +3,22 @@ import nltk
 from nltk.tag import hmm
 import dill
 import os
+from tqdm import tqdm
 
 def load_dataset_from_csv(csv_file):
     #Placeholder to contain all the training sentence and tags
-    sentences = []
+    tagged_data = []
     with open(csv_file, 'r') as file:
         #Read the dataset
         reader = csv.reader(file)
-        #Skip the header file
-        next(reader)
         #Itterate over the dataset
+        sentence_tags = []
         for row in reader:
-            sentence = " ".join(row[::2]).lower().strip()
-            tokens = nltk.word_tokenize(sentence)
-            tagged_data = [(token, row[i+1]) for i, token in enumerate(tokens) if token]
-            sentences.append(tagged_data)
-    return sentences
+            for i in range(len(row)):
+                data = row[i].split("|")
+                sentence_tags.append((data[0].strip().lower(), data[1].strip()))
+            tagged_data.append(sentence_tags)
+    return tagged_data
 
 
 def split_dataset(dataset, split=.9):
@@ -28,30 +28,24 @@ def split_dataset(dataset, split=.9):
 
 def train_hmm(dataset):
     trainer = hmm.HiddenMarkovModelTrainer()
-    for _ in range(500):
+    for i in tqdm(range(1), desc="Training"):
         tagger = trainer.train_supervised(dataset)
     return tagger
 
-def main():
-    files = os.listdir("../Tagged_Article")
-    testing = []
-    for i in  range(len(files)-25):
-    #open the dataset
-        print(f"Traning: {files[i]}")
-        train_data = load_dataset_from_csv(f"../Tagged_Article/{files[i]}")
-        #Split the dataset
-        train, test = split_dataset(train_data)
-        testing.append(test[0])
-        # #Train
-        tagger = train_hmm(train)
+def main():    
+    train_data = load_dataset_from_csv(f"../Tagged_Article/Compiled_Dataset/all.csv")
+    #Split the dataset
+    train, test = split_dataset(train_data)
+    # #Train
+    tagger = train_hmm(train)
 
         # #Accuracy tester
-    acurracy = tagger.accuracy(testing)
+    acurracy = tagger.accuracy(test)
     print(f"Accuracy: {acurracy}")
 
-    # #Test
+    #Test
     # sentence = "usa, duha"
-    # tokens = nltk.word_tokenize(sentence.lower())
+    # tokens = ["usa", "duha"]
     # tagged_sentence = tagger.tag(tokens)
     # print("Tagged sentence:", tagged_sentence)
 
