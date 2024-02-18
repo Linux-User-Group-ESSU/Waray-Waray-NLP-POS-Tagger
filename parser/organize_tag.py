@@ -50,6 +50,18 @@ for dataset_file in files:
                     tagged_writer.writerow(tagged)
                 counter += 1
 
+    with open("../Tagged_Article/DataTag.csv", "w") as tag_write:
+        with open("dataset1.csv", "r") as tag_file:
+                tag_reader = csv.reader(tag_file)
+                tagged = []
+                for ii in tag_reader:
+                    end = len(ii)
+                    for jj in range(0, end, 2):
+                        if ii[jj].strip():
+                            tag_write.writelines(f"{ii[jj].strip()}|{ii[jj+1].strip()}\n")
+
+
+
 
 #Save unknown tags
 save_unknown_tags(
