@@ -2,10 +2,9 @@ import dill
 import nltk
 
 with open("hmm_waray_tagger.pickle", "rb") as tag:
-    print(tag)
     tagger = dill.load(tag)
-
-    sentence = "Inusig ka dadama"
-    token = nltk.word_tokenize(sentence)
-    tagged_sentece = tagger.tag(token)
+    word = "sumat naman"
+    test_sentence = nltk.word_tokenize(word)
+    # test_sentence = ['sumat', 'naman', 'ni', 'castillote', 'nga', 'an', 'papanginauon', 'han', 'ira', 'buhatan', 'amu', 'in', 'kun', 'may-ada', 'tama',]
+    tagged_sentece = tagger.tag(test_sentence)
     print(tagged_sentece)
