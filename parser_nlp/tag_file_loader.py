@@ -10,3 +10,6 @@ def load_tagset(filepath):
                 datas[i[j].lower().strip()] = i[j+1]
     
     return datas
+
+if __name__=="__main__":
+    print(load_tagset("dataset1.csv"))
