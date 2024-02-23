@@ -1,7 +1,7 @@
 import csv
 
 with open("dataset.csv", "r") as new_tags:
-    with open("dataset1.csv", "a") as old_tags:
+    with open("newTag.csv", "a") as old_tags:
         reader = csv.reader(new_tags)
 
         for i in reader:
