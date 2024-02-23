@@ -1,25 +1,27 @@
 #!/usr/bin/python3
 import csv
 import nltk
-import os
 from checker import *
 from saver import save_unknown_tags
 from tag_file_loader import load_tagset
+from read_files import read_files
 
-datas = load_tagset("dataset1.csv")
+datas = load_tagset("newTag.csv")
+print(len(datas))
 untagged = []
 untagged_in_file = []
 
 #Get all the articles filename
-files = os.listdir("../New_Article")
+files = read_files("../New_Article")
+
 for dataset_file in files:
     with open(f"../Untagged_Word/untagged.csv", "r") as untagged_data:
         reader = csv.reader(untagged_data)
         for i in reader:
             untagged_in_file.append(i[0])
 
-    output_file = dataset_file.replace(".txt", "")
-    with open(f"../Tagged_Article/{output_file}.csv", "w") as tagged_file:
+    output_file = dataset_file.replace(".txt", ".csv")
+    with open(f"../Tagged_Article/{output_file}", "w") as tagged_file:
         tagged_writer = csv.writer(tagged_file)
         with open(f"../New_Article/{dataset_file}", "r") as dataset:
             reader = dataset.readlines()
@@ -51,14 +53,13 @@ for dataset_file in files:
                 counter += 1
 
     with open("../Tagged_Article/DataTag.csv", "w") as tag_write:
-        with open("dataset1.csv", "r") as tag_file:
+        with open("newTag.csv", "r") as tag_file:
                 tag_reader = csv.reader(tag_file)
                 tagged = []
                 for ii in tag_reader:
-                    end = len(ii)
-                    for jj in range(0, end, 2):
-                        if ii[jj].strip():
-                            tag_write.writelines(f"{ii[jj].strip()}|{ii[jj+1].strip()}\n")
+                    if ii:
+                        ii_data = ii[0].split("|")
+                        tag_write.writelines(f"{ii_data[0].strip()}|{ii_data[1].strip()}\n")
 
 
 
