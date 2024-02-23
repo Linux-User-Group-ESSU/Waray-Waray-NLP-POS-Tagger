@@ -5,11 +5,11 @@ def load_tagset(filepath):
     with open(filepath, "r") as inFile:
         inFile_data = csv.reader(inFile)
         for i in inFile_data:
-            end = len(i)
-            for j in range(0, end, 2):
-                datas[i[j].lower().strip()] = i[j+1]
+            if i:
+                data = i[0].split("|")
+                datas[data[0].lower().strip()] = data[1]
     
     return datas
 
 if __name__=="__main__":
-    print(load_tagset("dataset1.csv"))
+    print(load_tagset("newTag.csv"))
