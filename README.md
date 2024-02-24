@@ -7,4 +7,4 @@
        the already tagged words and saved into a different file.
        - [ ] The saved filed will be validated manually (Wrong tags will be changed appropriately) 
 2. - [x] Train the HMM model using KFold Cross Validation to prevent biases of the data when training and testing.
-3. - [x] Test the accuracy of the HMM model using the testing dataset(10% of the dataset)
+3. <del> - [x] Test the accuracy of the HMM model using the testing dataset(10% of the dataset) </del>
