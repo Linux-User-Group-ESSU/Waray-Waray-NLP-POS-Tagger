@@ -7,8 +7,8 @@ def load_dataset_from_csv(csv_file, state: bool = False):
         states = []
         reader = csv.reader(file)
         #Itterate over the dataset
-        sentence_tags = []
         for row in reader:
+            sentence_tags = []
             for i in range(len(row)):
                 data = row[i].split("|")
                 if data[1].strip() not in states : states.append(data[1].strip())

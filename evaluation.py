@@ -1,9 +1,8 @@
 from sklearn.model_selection import KFold
 from collections import defaultdict
-from training import load_dataset_from_csv
+from OneFileTraining import load_dataset_from_csv
 import dill
 import sys
-from ..parser_nlp import read_files
 
  
 def evaluate_hmm_tagger(tagged_sentences, num_folds=5):
