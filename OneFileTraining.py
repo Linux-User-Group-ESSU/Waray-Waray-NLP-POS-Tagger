@@ -5,10 +5,11 @@ from tqdm import tqdm
 from os import listdir
 from parser_nlp.dataset_loader import load_dataset_from_csv
 from parser_nlp.spliiter import split_dataset
-from  sklearn.model_selection import KFold
+from sklearn.model_selection import KFold
+from Accuracy_Plot.accuracy_plot import plot_train
 
 def train_hmm(dataset, states):
-    acc = 0
+    acc : list[float] = []
     trainer = hmm.HiddenMarkovModelTrainer(
         states=states,
     )
@@ -18,8 +19,8 @@ def train_hmm(dataset, states):
         test_data = [dataset[i] for i in test]
         #Uses the LapLace Smoothing because the MLE causes Runtime Overflow
         tagger = trainer.train_supervised(train_data, estimator=lambda fd, bins: WittenBellProbDist(fd, bins))
-        acc += tagger.accuracy(test_data)
-    return tagger, acc / 220
+        acc.append(tagger.accuracy(test_data))
+    return tagger, acc
 
 def main(): 
     train_data, states = load_dataset_from_csv(f"Tagged_Article/Compiled_Dataset/all.csv", state=True)
@@ -27,10 +28,13 @@ def main():
     train, test = split_dataset(train_data)
     # #Train
     tagger, accuracy = train_hmm(train, states)
-    print(accuracy)
+    print(sum(accuracy) / 220) #Change the 220 if you change the n_splits in KFold
 
     print(f"Accuracy: {tagger.accuracy(test)}")
 
+    x = [i for i in range(1, 221)]
+
+    plot_train("Single File Data", x, accuracy)
 
     with open("hmm_waray_tagger.pickle", "wb") as model_file:
         dill.dump(tagger, model_file)
