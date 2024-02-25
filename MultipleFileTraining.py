@@ -54,7 +54,7 @@ def main():
 
     plot_train("Multiple File", x, acc)
     
-    with open("hmm_waray_tagger.pickle", "wb") as model_file:
+    with open("Multiple_Train_tagger.pickle", "wb") as model_file:
         dill.dump(tagger, model_file)
     
 

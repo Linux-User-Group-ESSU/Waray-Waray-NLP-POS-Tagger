@@ -36,7 +36,7 @@ def main():
 
     plot_train("Single File Data", x, accuracy)
 
-    with open("hmm_waray_tagger.pickle", "wb") as model_file:
+    with open("Single_Train_tagger.pickle", "wb") as model_file:
         dill.dump(tagger, model_file)
 
 
