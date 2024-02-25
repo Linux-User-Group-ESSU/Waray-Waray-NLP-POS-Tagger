@@ -10,6 +10,7 @@ from parser_nlp.states import STATES
 from parser_nlp.dataset_loader import load_dataset_from_csv
 from sklearn.model_selection import KFold
 from random import randint
+from Accuracy_Plot.accuracy_plot import plot_train
 
 
 def train_hmm(dataset, trainer):
@@ -34,7 +35,7 @@ def train_hmm(dataset, trainer):
 
 
 def main(): 
-    acc = 0
+    acc = []
     total = 0
     files = read_files("Tagged_Article")
     trainer = hmm.HiddenMarkovModelTrainer(
@@ -45,10 +46,14 @@ def main():
         #Split the dataset
         # #Train
         tagger, accuracy = train_hmm(train_data, trainer)
-        acc += accuracy
+        acc.append(accuracy)
         total += 1
-    print(acc / total)
+    print(sum(acc) / total)
 
+    x = [i for i in range(1, total + 1)]
+
+    plot_train("Multiple File", x, acc)
+    
     with open("hmm_waray_tagger.pickle", "wb") as model_file:
         dill.dump(tagger, model_file)
     
