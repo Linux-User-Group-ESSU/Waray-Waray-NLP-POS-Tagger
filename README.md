@@ -11,7 +11,7 @@
 4. - [ ] Need more data.
 
 # Model Accuracy
-## All dataset in one file
+## All dataset in one file graph
 ![One dataset](/Multiple_File_Accuracy.png)
 ## Dataset are distributed to multiple file
 ![Multiple dataset](/Single_File_Data_Accuracy.png)
