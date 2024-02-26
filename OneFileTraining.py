@@ -34,7 +34,7 @@ def main():
 
     x = [i for i in range(1, 221)]
 
-    plot_train("Single File Data", x, accuracy)
+    plot_train("Single_File_Data", x, accuracy)
 
     with open("Single_Train_tagger.pickle", "wb") as model_file:
         dill.dump(tagger, model_file)

@@ -52,7 +52,7 @@ def main():
 
     x = [i for i in range(1, total + 1)]
 
-    plot_train("Multiple File", x, acc)
+    plot_train("Multiple_File", x, acc)
     
     with open("Multiple_Train_tagger.pickle", "wb") as model_file:
         dill.dump(tagger, model_file)
