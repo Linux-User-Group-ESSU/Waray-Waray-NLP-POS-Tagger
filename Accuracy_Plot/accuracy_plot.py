@@ -15,5 +15,5 @@ def plot_train(type : str, x_tag : list[int], y_tag : list[float]) -> None:
 
     #Label Thickness
     ax.tick_params(axis='both', labelsize=14)
-    plt.savefig(f"{type} Accuracy.png")
+    plt.savefig(f"{type}_Accuracy.png")
     print("Saved")
