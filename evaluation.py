@@ -1,8 +1,10 @@
 from sklearn.model_selection import KFold
 from collections import defaultdict
-from training import train_hmm, load_dataset_from_csv
+from OneFileTraining import load_dataset_from_csv
 import dill
+import sys
 
+ 
 def evaluate_hmm_tagger(tagged_sentences, num_folds=5):
     # Initialize a KFold cross-validator. All folds are used for validation except num_folds-1
     # Split the dataset into num_folds time and shffle the dataset before splitting 
@@ -29,7 +31,8 @@ def evaluate_hmm_tagger(tagged_sentences, num_folds=5):
 
     return overall
 
-tagged_sentences = load_dataset_from_csv("../Tagged_Article/Ada.csv")
-evaluation_results = evaluate_hmm_tagger(tagged_sentences)
-print("Evaluation results:")
-print("Accuracy:", evaluation_results['accuracy'])
+tagged_sentences = load_dataset_from_csv("../Tagged_Article/Compiled_Dataset/all.csv")
+# print(tagged_sentences)
+# evaluation_results = evaluate_hmm_tagger(tagged_sentences)
+# print("Evaluation results:")
+# print("Accuracy:", evaluation_results['accuracy'])
