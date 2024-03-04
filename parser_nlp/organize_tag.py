@@ -5,10 +5,14 @@ from checker import *
 from saver import save_unknown_tags
 from tag_file_loader import load_tagset
 from read_files import read_files
+from states import STATES
 
 datas = load_tagset("newTag.csv")
 untagged = []
 untagged_in_file = []
+wordCount = {}
+for i in STATES:
+    wordCount[i] = 0
 
 
 with open(f"../Untagged_Word/untagged.csv", "r") as untagged_data:
@@ -36,21 +40,32 @@ for dataset_file in files:
                     for j in token:
                         if is_special(j):
                             tagged.append(f"{j}|?")
+                            wordCount["?"] += 1
                         else:
                             word = j.lower().strip().replace(".", "").replace(",", "")
                             if word in datas:
+                                try:
+                                    wordCount[datas[word]] += 1
+                                except:
+                                    pass
                                 tagged.append(f"{word}|{datas[word]}")
                             elif is_int(word):
+                                wordCount["NMBR"] += 1
                                 tagged.append(f"{word}|NMBR")
                             else:
                                 tagged.append(f"{word}|OOV")
+                                wordCount["OOV"] += 1
                                 if word not in untagged:
                                     untagged.append(word)
                     
                     tagged_writer.writerow(tagged)
                 counter += 1
 
+total = 0
+for a in wordCount:
+    total += wordCount[a]
 
+print(total)
 
 #Save unknown tags
 save_unknown_tags(
