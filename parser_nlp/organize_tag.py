@@ -6,6 +6,8 @@ from saver import save_unknown_tags
 from tag_file_loader import load_tagset
 from read_files import read_files
 from states import STATES
+import random
+from string import punctuation
 
 datas = load_tagset("newTag.csv")
 untagged = []
@@ -31,35 +33,32 @@ for dataset_file in files:
             reader = dataset.readlines()
             counter = 0
             for i in reader:
-                #skip the author and published by
-                if counter >= 1 and counter <= 3: pass
-                else:
-                    i = i.strip("\n")
-                    token = nltk.word_tokenize(i)
-                    tagged = []
-                    for j in token:
-                        if is_special(j):
-                            tagged.append(f"{j}|?")
-                            wordCount["?"] += 1
+                i = i.strip("\n")
+                token = nltk.word_tokenize(i)
+                tagged = []
+                token.append(random.choice(list(set(punctuation)) + [".", ".", ".", ".", ".", "."]))
+                for j in token:
+                    if is_special(j):
+                        tagged.append(f"{j}|?")
+                        wordCount["?"] += 1
+                    else:
+                        word = j.lower().strip().replace(".", "").replace(",", "")
+                        if word in datas:
+                            try:
+                                wordCount[datas[word]] += 1
+                            except:
+                                pass
+                            tagged.append(f"{word}|{datas[word]}")
+                        elif is_int(word):
+                            wordCount["NMBR"] += 1
+                            tagged.append(f"{word}|NMBR")
                         else:
-                            word = j.lower().strip().replace(".", "").replace(",", "")
-                            if word in datas:
-                                try:
-                                    wordCount[datas[word]] += 1
-                                except:
-                                    pass
-                                tagged.append(f"{word}|{datas[word]}")
-                            elif is_int(word):
-                                wordCount["NMBR"] += 1
-                                tagged.append(f"{word}|NMBR")
-                            else:
-                                tagged.append(f"{word}|OOV")
-                                wordCount["OOV"] += 1
-                                if word not in untagged:
-                                    untagged.append(word)
-                    
-                    tagged_writer.writerow(tagged)
-                counter += 1
+                            tagged.append(f"{word}|OOV")
+                            wordCount["OOV"] += 1
+                            if word not in untagged:
+                                untagged.append(word)
+                
+                tagged_writer.writerow(tagged)
 
 total = 0
 for a in wordCount:
