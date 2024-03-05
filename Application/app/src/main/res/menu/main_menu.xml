@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:title="Start Over"
+        android:id="@+id/restart"/>
+    <item
+        android:title="Tags"
+        android:id="@+id/tagLabel"/>
+    <item
+        android:title="About"
+        android:id="@+id/about"/>
 </menu>
