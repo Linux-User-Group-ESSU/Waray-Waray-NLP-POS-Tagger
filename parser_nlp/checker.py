@@ -10,3 +10,7 @@ def is_int(param):
         return True
     except:
         return False
+
+
+if __name__=="__main__":
+    print(is_special("."))
