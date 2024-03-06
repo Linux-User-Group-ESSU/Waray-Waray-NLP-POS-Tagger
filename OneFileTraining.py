@@ -25,9 +25,9 @@ def train_hmm(dataset, states):
 def main(): 
     train_data, states = load_dataset_from_csv(f"Tagged_Article/Compiled_Dataset/all.csv", state=True)
     #Split the dataset
-    train, test = split_dataset(train_data)
+    _, test = split_dataset(train_data)
     # #Train
-    tagger, accuracy = train_hmm(train, states)
+    tagger, accuracy = train_hmm(train_data, states)
     print(sum(accuracy) / 100) #Change the 220 if you change the n_splits in KFold
 
     print(f"Accuracy: {tagger.accuracy(test)}")

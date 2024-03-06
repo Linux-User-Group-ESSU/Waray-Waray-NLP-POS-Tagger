@@ -9,7 +9,7 @@ nangangalansing|VB,la|CLTC,an|DT,mga|MDFR,plato|NN,ngan|CJTN,baso|NN,nga|DT,gin-
 baga|MDFR,hin|IJTN,bagting|VB,nga|DT,nagpapasabot|VB,nga|DT,hapit|VB,na|RP,magtikang|VB,an|DT,drama|VB,<|?
 kahuman|CJTN,la|CLTC,niya|PNN,banlawi|VB,an|DT,mga|MDFR,kinaonan|MDFR,",|?",nagdali|MDFR,ini|PNN,hira|PNN,ni|DT,jose|NN,pagkagawas|MDFR,han|DT,ira|PNN,balay|NN,?|?
 pumuwesto|MDFR,hira|PNN,ha|DT,tabla|NN,nga|DT,lingkuran|NN,nga|DT,naatubang|VB,ha|DT,sala|NN,han|DT,ira|PNN,amyaw|MDFR,nga|DT,may|MDFR,tv|NN,{|?
-rico|NN,na|RP,hi|DT,isabel|NN,_|OOV
+rico|NN,na|RP,hi|DT,isabel|NN,_|?
 nakakapalit|VB,na|RP,hiya|PNN,hit|IJTN,’|?,nga|DT,tanan|NN,nga|DT,iya|PNN,kanihanglanon|MDFR,&|?
 maupay|MDFR,na|RP,it|IJTN,’|?,iya|PNN,balay|NN,",|?",damo|MDFR,it|IJTN,'|?,mga|MDFR,muebles|NN,ngan|CJTN,appliances|NN,.|?
 ay|IJTN,'|?,la|CLTC,ceding|NN,",|?",magririko|MDFR,gihap|MDFR,’|?,kita|MDFR,",|?",baton|VB,ni|DT,jose|NN,)|?
@@ -22,7 +22,7 @@ an|DT,ira|PNN,amyaw|MDFR,diri|MDFR,gad|CLTC,riko|MDFR,pero|CJTN,nakapalit|VB,hin
 nakakapalit|VB,hira|PNN,bisan|MDFR,la|CLTC,hulugan|MDFR,[|?
 hi|DT,jose|NN,medyo|MDFR,malabo|MDFR,pa|CLTC,kay|CJTN,usa|NMBR,hiya|PNN,nga|DT,pedicab|NN,drayber|NN,nga|DT,nabayad|VB,la|CLTC,hin|IJTN,boundary|NN,*|?
 usahay|MDFR,gutiay|MDFR,la|CLTC,it|IJTN,’|?,iya|PNN,kita|MDFR,hit|IJTN,’|?,usa|NMBR,kaadlaw|MDFR,-|?
-tuman|VB,la|CLTC,nga|DT,nakakalabaw|MDFR,hit|IJTN,’|?,igbarayad|MDFR,hit|IJTN,’|?,tag-iya|NN,hit|IJTN,’|?,pedicab|NN,_|OOV
+tuman|VB,la|CLTC,nga|DT,nakakalabaw|MDFR,hit|IJTN,’|?,igbarayad|MDFR,hit|IJTN,’|?,tag-iya|NN,hit|IJTN,’|?,pedicab|NN,_|?
 hi|DT,ceding|NN,naman|CLTC,naglalaba|VB,kada|MDFR,semana|NN,hit|IJTN,’|?,mga|MDFR,bado|NN,hit|IJTN,’|?,ira|PNN,usa|NMBR,nga|DT,amyaw|MDFR,(|?
 pero|CJTN,diri|MDFR,man|CLTC,liwat|CLTC,ini|PNN,makakasadang|MDFR,hit|IJTN,’|?,iya|PNN,la|CLTC,senemana|VB,nga|DT,kita|MDFR,>|?
 una|NMBR,napliti|MDFR,la|CLTC,hira|PNN,hin|IJTN,gutiay|MDFR,nga|DT,balay|NN,nga|DT,baraydan|NN,kada|MDFR,bulan|NN,.|?
@@ -79,11 +79,11 @@ ay|IJTN,'|?,la|CLTC,kay|CJTN,bangin|MDFR,umagi|VB,an|DT,namamalit|MDFR,",|?",igp
 nagsumbong|MDFR,hi|DT,cedingkan|MDFR,jose|NN,han|DT,iya|PNN,nabatian|VB,>|?
 pinanlumawan|MDFR,an|DT,magtiayon|VB,kay|CJTN,nanganugon|NN,hira|PNN,han|DT,mga|MDFR,gamit|VB,?|?
 nagdesisyon|VB,hi|DT,jose|NN,",|?",kawaton|VB,ta|PNN,it|IJTN,’|?,tv|NN,ugsa|PSTN,mahibaligya|MDFR,@|?
-adi|PNN,la|CLTC,kita|MDFR,ha|DT,luyo|MDFR,hit|IJTN,’|?,pader|NN,maagi|VB,hit|IJTN,’|?,gab-i|NN,_|OOV
+adi|PNN,la|CLTC,kita|MDFR,ha|DT,luyo|MDFR,hit|IJTN,’|?,pader|NN,maagi|VB,hit|IJTN,’|?,gab-i|NN,_|?
 jose|NN,bang|CJTN,'|?,kita|MDFR,hidakpan|VB,",|?",magkapripriso|MDFR,pa|CLTC,lugod|CLTC,kita|MDFR,!|?
 ay|IJTN,'|?,la|CLTC,",|?",matiempo|MDFR,gad|CLTC,la|CLTC,kita|MDFR,;|?
 ha|DT,pira|MDFR,ka|PNN,semana|NN,",|?",ira|PNN,ini|PNN,ginhiningyapon|MDFR,nga|DT,umabot|VB,an|DT,takna|NN,nga|DT,kumusog|VB,na|RP,an|DT,ira|PNN,kaburot-on|NN,.|?
-umulpot|VB,an|DT,panahon|NN,nga|DT,nahimo|VB,nira|PNN,makuha|VB,an|DT,gutiay|MDFR,nga|DT,transistor|MDFR,nga|DT,radyo|NN,_|OOV
+umulpot|VB,an|DT,panahon|NN,nga|DT,nahimo|VB,nira|PNN,makuha|VB,an|DT,gutiay|MDFR,nga|DT,transistor|MDFR,nga|DT,radyo|NN,_|?
 tikang|MDFR,yana|NN,may|MDFR,'da|IJTN,na|RP,hira|PNN,radyo|NN,nga|DT,napapamatian|MDFR,hin|IJTN,tukar|VB,",|?",mga|MDFR,notisya|MDFR,ngan|CJTN,drama|VB,~|?
 humagos|VB,an|DT,pira|MDFR,ka|PNN,adlaw|NN,",|?",nabatian|VB,ni|DT,ceding|NN,an|DT,notisya|MDFR,nga|DT,may|MDFR,‘|?,da|IJTN,maabot|VB,nga|DT,makusog|MDFR,nga|DT,bagyo|NN,ha|DT,ira|PNN,lugar|NN,]|?
 ini|PNN,nga|DT,bagyo|NN,sadang|MDFR,makapukan|MDFR,hin|IJTN,mga|MDFR,puno|MDFR,hin|IJTN,lubi|NN,ngan|CJTN,maghahatag|VB,hin|IJTN,makusog|MDFR,nga|DT,huyop|VB,hin|IJTN,hangin|NN,ngan|CJTN,magdadara|VB,hin|IJTN,pag-alimbukad|VB,hit|IJTN,’|?,tubig|NN,dagat|NN,.|?
@@ -106,7 +106,7 @@ nagpinanginano|VB,la|CLTC,hira|PNN,han|DT,huyop|VB,han|DT,hangin|NN,ngan|CJTN,pa
 napanhibati-bati|MDFR,han|DT,lambos|MDFR,han|DT,hangin|NN,nga|DT,nagtikakusog|VB,\|?
 waray|MDFR,na|RP,hira|PNN,nakikit-an|VB,ha|DT,gawas|VB,kay|CJTN,puro|MDFR,na|RP,la|CLTC,burong|IJTN,>|?
 di|CJTN,naiha|VB,inabat|VB,na|RP,hira|PNN,nga|DT,baga|MDFR,hin|IJTN,ginsusukwat|VB,an|DT,ira|PNN,payag|NN,han|DT,hangin|NN,ngan|CJTN,ginlilinuab|VB,an|DT,ira|PNN,atop|NN,<|?
-nakakabungol|VB,ngan|CJTN,nakakapanerbiyos|IJTN,an|DT,tunog|NN,han|DT,paglasorbo|VB,han|DT,hangin|NN,ngan|CJTN,nangangaradol|VB,nga|DT,nagkakalupad|VB,nga|DT,mga|MDFR,butang|NN,ha|DT,gawas|VB,_|OOV
+nakakabungol|VB,ngan|CJTN,nakakapanerbiyos|IJTN,an|DT,tunog|NN,han|DT,paglasorbo|VB,han|DT,hangin|NN,ngan|CJTN,nangangaradol|VB,nga|DT,nagkakalupad|VB,nga|DT,mga|MDFR,butang|NN,ha|DT,gawas|VB,_|?
 di|CJTN,naiha|VB,natuklap|MDFR,na|RP,an|DT,ira|PNN,bug-os|MDFR,nga|DT,atop|NN,ngan|CJTN,nalisang|PNN,ini|PNN,hira|PNN,pagsirong|PNN,ha|DT,ilarom|MDFR,han|DT,lamisa|NN,han|DT,tv|NN,ngan|CJTN,radyo|NN,nga|DT,ira|PNN,kinawat|MDFR,+|?
 gin-upay|MDFR,nira|PNN,an|DT,mga|MDFR,putos|NN,hini|PNN,para|CJTN,diri|MDFR,mahulos|MDFR,.|?
 pero|CJTN,ha|DT,di|CJTN,kaihaan|MDFR,",|?",umalimbukad|MDFR,an|DT,maitom|MDFR,nga|DT,tubig|NN,ngadto|DT,ha|DT,sulod|NN,han|DT,ira|PNN,balay|NN,]|?
