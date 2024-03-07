@@ -1,5 +1,5 @@
 def tokenize_text(text):
-    punctuation = ".!?,{}[]()@#$%^&*_"
+    punctuation = ".!?,{}[]()@#$%^&*"
 
     tokens = []
     current_word = ""
