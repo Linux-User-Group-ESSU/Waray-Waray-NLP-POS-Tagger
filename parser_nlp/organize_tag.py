@@ -8,6 +8,8 @@ from read_files import read_files
 from states import STATES
 import random
 from string import punctuation
+from tokenizer import tokenize_text
+from string import punctuation
 
 datas = load_tagset("newTag.csv")
 untagged = []
@@ -32,13 +34,14 @@ for dataset_file in files:
         with open(f"../New_Article/{dataset_file}", "r") as dataset:
             reader = dataset.readlines()
             counter = 0
+            punctuations = list(set(punctuation))
             for i in reader:
                 i = i.strip("\n")
-                token = nltk.word_tokenize(i)
+                token = tokenize_text(i.lower())
                 tagged = []
                 token.append(random.choice(list(set(punctuation)) + [".", ".", ".", ".", ".", "."]))
                 for j in token:
-                    if is_special(j):
+                    if j in punctuations:
                         tagged.append(f"{j}|?")
                         wordCount["?"] += 1
                     else:
