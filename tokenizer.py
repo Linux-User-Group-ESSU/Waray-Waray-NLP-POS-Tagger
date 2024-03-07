@@ -20,3 +20,7 @@ def tokenize_text(text):
         tokens.append(current_word)
 
     return tokens
+
+
+if __name__=="__main__":
+    print(tokenize_text("ano't"))
