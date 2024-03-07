@@ -13,8 +13,8 @@ def train_hmm(dataset, states):
     trainer = hmm.HiddenMarkovModelTrainer(
         states=states,
     )
-    fold = KFold(n_splits=100, shuffle=True)
-    for train, test in tqdm(fold.split(dataset), total=100, desc="Training..."):
+    fold = KFold(n_splits=200, shuffle=True)
+    for train, test in tqdm(fold.split(dataset), total=200, desc="Training..."):
         train_data = [dataset[i] for i in train]
         test_data = [dataset[i] for i in test]
         #Uses the LapLace Smoothing because the MLE causes Runtime Overflow
@@ -28,11 +28,11 @@ def main():
     _, test = split_dataset(train_data)
     # #Train
     tagger, accuracy = train_hmm(train_data, states)
-    print(sum(accuracy) / 100) #Change the 220 if you change the n_splits in KFold
+    print(sum(accuracy) / 200) #Change the 220 if you change the n_splits in KFold
 
     print(f"Accuracy: {tagger.accuracy(test)}")
 
-    x = [i for i in range(1, 101)]
+    x = [i for i in range(1, 201)]
 
     plot_train("Single_File_Data", x, accuracy)
 
