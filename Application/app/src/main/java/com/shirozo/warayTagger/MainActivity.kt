@@ -5,10 +5,14 @@ import android.app.Dialog
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Paint
+import android.nfc.Tag
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
@@ -23,6 +27,7 @@ import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import com.chaquo.python.PyObject
 import com.chaquo.python.Python
@@ -35,7 +40,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit  var scrollV : ScrollView
     private lateinit var scrollLayout : LinearLayout
     private lateinit var prompt : EditText
-    private lateinit var dialog : Dialog
+    private lateinit var Tagdialog : Dialog
+    private lateinit var Aboutdialog: Dialog
     @SuppressLint("UseCompatLoadingForDrawables")
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,11 +56,17 @@ class MainActivity : AppCompatActivity() {
 
         val submit = findViewById<Button>(R.id.submit)
 
-        dialog = Dialog(this)
-        dialog.setContentView(R.layout.tags)
-        dialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.input))
-        dialog.setCancelable(true)
+        Tagdialog = Dialog(this)
+        Tagdialog.setContentView(R.layout.tags)
+        Tagdialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        Tagdialog.window?.setBackgroundDrawable(getDrawable(R.drawable.input))
+        Tagdialog.setCancelable(true)
+
+        Aboutdialog = Dialog(this)
+        Aboutdialog.setContentView((R.layout.about))
+        Aboutdialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        Aboutdialog.window?.setBackgroundDrawable(getDrawable(R.drawable.input))
+        Tagdialog.setCancelable(true)
 
         scrollV = findViewById(R.id.scroll)
         scrollLayout = findViewById(R.id.scrollLayout)
@@ -79,18 +91,15 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.about -> {
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show()
+                Aboutdialog.show()
             }
             R.id.tagLabel -> {
-                dialog.show()
+                Tagdialog.show()
             }
             R.id.restart -> {
-                for (i in 0 until scrollLayout.childCount) {
-                    val child = scrollLayout.getChildAt(i)
-                    scrollLayout.removeView(child)
-                }
-                que = 0
-                tag()
+                scrollLayout.removeAllViews()
+                val image = findViewById<ImageView>(R.id.logo)
+                image.visibility = View.VISIBLE
             }
         }
         return true
@@ -174,9 +183,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun isKeyboardActive (view : View) : Boolean {
-        val inputKeyboard = view.context.getSystemService(InputMethodManager::class.java)
-        return inputKeyboard.isAcceptingText
-    }
-
 }
+
