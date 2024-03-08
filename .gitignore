@@ -2,7 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.nlpvenv/
+.nlpvenv/*
+.nlpvenv
 # C extensions
 *.so
 .nlpvenv
