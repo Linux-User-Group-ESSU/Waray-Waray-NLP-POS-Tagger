@@ -68,7 +68,7 @@ def main() -> None:
     """
 
     #Load the dataset and all the states/tag the dataset have
-    train_data, states = load_dataset_from_csv(f"../Tagged_Article/Compiled_Dataset/all.csv", state=True)
+    train_data, states = load_dataset_from_csv(f"../Tagged_Article_Corrected/Compiled_Dataset/all.csv", state=True)
 
     #Function call to train_hmm passing the training dataet and states.
     tagger, accuracies = train_hmm(train_data, states)

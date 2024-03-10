@@ -1,7 +1,7 @@
 an|DT,tamsi|NN,$|?
 twiiit|IJTN,!|?,twiiit|IJTN,!|?,araba|VB,han|DT,tamsi|NN,:|?
-twiiit|IJTN,!|?,twiiit|IJTN,!|?,_|OOV
-hain|PNN,daw|MDFR,adi|PNN,nga|DT,tamsi|NN,?|?,napausa|VB,hi|DT,lito|NN,@|?
+twiiit|IJTN,!|?,twiiit|IJTN,!|?,_|?
+hain|PNN,daw|CLTC,adi|PNN,nga|DT,tamsi|NN,?|?,napausa|VB,hi|DT,lito|NN,@|?
 ginbiling|VB,niya|PNN,ini|PNN,%|?
 han|DT,iya|PNN,kitaon|VB,",|?",may|MDFR,ada|IJTN,samad|NN,an|DT,tiil|NN,!|?
 iya|PNN,ini|PNN,gindara|VB,ha|DT,balay|NN,;|?
@@ -19,4 +19,4 @@ lumupad|VB,an|DT,tamsi|NN,?|?
 lumupad|VB,hin|IJTN,hirayo|MDFR,an|DT,tamsi|NN,^|?
 lumupad|VB,",|?",lumupad|VB,",|?",lumupad|VB,.|?
 twit|IJTN,!|?,twit|IJTN,!|?,twit|IJTN,!|?,kanta|NN,han|DT,tamsi|NN,.|?
-kanta|NN,na|RP,daw|MDFR,nagpapasalamat|VB,kan|DT,lito|NN,.|?
+kanta|NN,na|RP,daw|CLTC,nagpapasalamat|VB,kan|DT,lito|NN,.|?

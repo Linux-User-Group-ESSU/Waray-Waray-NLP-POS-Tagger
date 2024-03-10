@@ -13,4 +13,4 @@ def compile_dataset(foldername : str, output_folder : str) -> None:
                     output_file.write(line)
 
 if __name__ == "__main__":
-    compile_dataset("../Tagged_Article", "../Tagged_Article/Compiled_Dataset")
+    compile_dataset("../Tagged_Article_Corrected", "../Tagged_Article_Corrected/Compiled_Dataset")
