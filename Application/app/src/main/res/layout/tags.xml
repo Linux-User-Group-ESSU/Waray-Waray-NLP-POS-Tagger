@@ -45,37 +45,37 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CJTN: Linker,Conjuction" />
+                android:text="CJTN: Tigusmpay (Linker,Conjuction)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CLTC: Clitic" />
+                android:text="CLTC: Kapinit (Clitic)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DT: Determiners" />
+                android:text="DT: Tigpananglit (Determiners)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FW: Foreign Word" />
+                android:text="FW: Dire Waray (Foreign Word)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IJTN: Idiomatic Expression" />
+                android:text="IJTN: Tigkalas (Idiomatic Expression)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MDFR: Modifier,Adverb,Adjective,Affix" />
+                android:text="MDFR: Tigrulidung (Modifier,Adverb,Adjective,Affix)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NN: Noun" />
+                android:text="NN: Tigngaran (Noun)" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -85,12 +85,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NMBR : Numerals" />
+                android:text="NMBR : Tig-Ihap (Numerals, Quantifiers, Cardinals)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PNN : Pronoun" />
+                android:text="PNN : Tigsaliwan (Pronoun)" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -105,12 +105,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="VB : Verb" />
+                android:text="VB : Tigpanhitabu (Verb)" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OOV: Out of Vocabulary or Unknown" />
+                android:text="OOV: Dire Aram (Out of Vocabulary)" />
 
         </LinearLayout>
 
