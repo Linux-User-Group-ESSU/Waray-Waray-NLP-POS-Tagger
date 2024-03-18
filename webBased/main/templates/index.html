@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/static/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .actions div{
+            display: inline-block;
+        }
+        
+        .title {
+            border-bottom: 1px solid black;
+            padding: 1%;
+        }
+        
+        .pos-tag {
+            padding: 1% 1%;
+        }
+        
+        .pos-data {
+            background-color: white;
+            height: 78dvh;
+            border-radius: 1rem;
+            padding: 1%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .pos-content {
+            width: 100px;
+            height: 20px;
+            background-color: #ededed;
+            border-radius: .3rem;
+        }
+
+        .word-tag {
+            display: inline-block;
+            margin-bottom: 20px;
+            background-color: white;
+            margin-right: 5px;
+        }
+
+        .new-tag {
+            display: block;
+            margin-bottom: 20px;
+            background-color: white;
+            margin-right: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="title">Waray-waray POS Tagger Editor</h3>
+        <div class="actions">
+            <div>
+                <form id="uploadForm" method="post" enctype="multipart/form-data" action="{% url 'read' %}">
+                    {% csrf_token %}
+                    {% for i in file_form %}
+                        {{i}}
+                    {% endfor %}
+                </form>
+            </div>
+            <div>
+                <button onclick="download()" id="dl">Download</button>
+            </div>
+        </div>
+        <div class="pos-tag">
+            <div class="pos-data">
+                <div class="pos-container">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function resizeInput(input) {
+        input.style.width = (input.value.length + 1) + "ch";
+    }
+
+    function download() {
+        var posContainers = document.getElementsByClassName("pos-data")[0].getElementsByClassName("pos-container");
+        var csvContent = "Word,Tag\n";
+        
+        var wordCount = 0
+        // Iterate through each pos-container element
+        for (var i = 0; i < posContainers.length; i++) {
+            var posContainer = posContainers[i];
+            var word_data = posContainer.getElementsByClassName("word-tag");
+    
+            // Iterate through each .word-tag element
+            for (var j = 0; j < word_data.length; j++) {
+                var wordTag = word_data[j];
+                var inputs = wordTag.getElementsByClassName("pos-content");
+
+                var wordValue = inputs[0].value; //Word
+                var tagValue = inputs[1].value;  //Tag
+
+                if (wordValue.trim() !== "") {
+                    if (wordValue === ".") {
+                        csvContent +=  wordValue + '|' + tagValue + '\n';
+                    } else {
+                        csvContent += wordValue + '|' + tagValue + ',';
+                    }
+                    wordCount++
+                }
+            }
+        }
+        
+        if (+wordCount <= 0) {
+            alert("No Data!")
+        }
+        else {
+            // Create a Blob containing the CSV content
+            var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+        
+            // Create a link element to trigger the download
+            var a = document.createElement('a');
+            a.href = window.URL.createObjectURL(blob);
+            a.download = 'word_tags.csv';
+            
+            // Append the link to the body and trigger the click event
+            document.body.appendChild(a);
+            a.click();
+        
+            // Clean up
+            document.body.removeChild(a);
+        }
+    }
+
+    function uploadFile() {
+        var form = document.getElementById('uploadForm');
+        var formData = new FormData(form);
+
+        var csrftoken = getCookie('csrftoken');
+
+        $.ajax({
+            type: "POST",
+            url: "{% url 'read' %}",
+            data : formData,
+            processData: false,
+            contentType: false,
+            dataType : "json",
+            headers: {
+                "X-CSRFToken": csrftoken
+            },
+            success: function(response) {
+                $(".pos-container").html(response.html)
+            }
+        })
+    }
+    
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+    
+</script>
+</html>
