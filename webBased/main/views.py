@@ -6,7 +6,7 @@ from .form import FileUploadForm
 # Create your views here.
 
 def tokenize_text(text):
-    punctuation = r".!?,'{}[]()@#$%^&*"
+    punctuation = r".!?,'{}[]()@#$%^&*/"
 
     tokens = []
     current_word = ""
@@ -57,23 +57,29 @@ def read_file_content(request):
                 for chunk in uploaded_file.chunks():
                     destination.write(chunk)
             
-            datas = []
             html = ""
             
             with open(file_path, "r") as read:
                 data = read.readlines()
-                for i in data:
-                    tagged = tag(i.strip())
-                    for i, j in tagged:
-                        html += f"""
-                            <div class="word-tag">
-                                <input type="text" value="{i}" class="pos-content">
-                                <br>
-                                <input type="text" value="{j}" class="pos-content">
-                            </div>
-                        """
-                        if i == "." or i == "!" or i == "?":
-                            html += "<div class='new-tag'></div>"            
+                count = 0
+                for a in data:
+                    b = a.strip("\n").strip()
+                    if b:
+                        tagged = tag(b.strip())
+                        for i, j in tagged:
+                            wordTag = j.lower()
+                            if j == "?":
+                                wordTag = "punc"
+                            html += f"""
+                                <div class="word-tag">
+                                    <input type="text" value="{i}" class="pos-content">
+                                    <br>
+                                    <input type="text" value="{j}" class="pos-content {wordTag}" onkeyup="changeClass(event)" id="{count}">
+                                </div>
+                            """
+                            if i == "." or i == "!" or i == "?":
+                                html += "<div class='new-tag'></div>"  
+                            count += 1          
 
     data_return = {"html" : html}
     data_return["code"] = 200

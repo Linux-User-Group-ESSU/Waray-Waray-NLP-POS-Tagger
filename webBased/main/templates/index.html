@@ -12,6 +12,7 @@
 
         .actions div{
             display: inline-block;
+            padding: 0% 1%;
         }
         
         .title {
@@ -34,8 +35,10 @@
         .pos-content {
             width: 100px;
             height: 20px;
-            background-color: #ededed;
+            background-color: rgb(231, 231, 231);
             border-radius: .3rem;
+            outline: none;
+            border: none;
         }
 
         .word-tag {
@@ -51,12 +54,58 @@
             background-color: white;
             margin-right: 5px;
         }
+
+        .nn { background-color: yellow; }
+        .vb { background-color: green; }
+        .dt { background-color:aliceblue; }
+        .mdfr { background-color: aquamarine; }
+        .pnn { background-color: beige; }
+        .cltc { background-color: violet; }
+        .nmbr { background-color: tomato; }
+        .cjtn { background-color: tan; }
+        .ijtn { background-color: purple; }
+        .punc { background-color: lavender; }
+        .fw { background-color: cyan; }
+        .oov { background-color: yellowgreen; }
+        .rp { background-color: skyblue;}
+        .pstn {background-color: sienna;}
+        .ntrg {background-color: sandybrown;}
+
+        .nn, .vb, .dt, .mdfr, .pnn, .cltc, .nmbr, .cjtn,
+        .ijtn, .punc, .fw, .oov, .rp, .pstn, .ntrg {
+            padding: 1% 1%;
+            border: 1px solid black;
+            font-style: italic;
+        }
+
+        .legends {
+            padding: 1%;
+            margin-bottom: 20px;
+        }
         
     </style>
 </head>
 <body>
     <div class="container">
         <h3 class="title">Waray-waray POS Tagger Editor</h3>
+        <div class="legends">
+            Legends: 
+            <b class="nn">Noun</b>
+            <b class="dt">Determiners</b>
+            <b class="vb">Verb</b>
+            <b class="mdfr">Modifier</b>
+            <b class="pnn">Pronoun</b>
+            <b class="cltc">Clitic</b>
+            <b class="nmbr">Cardinal</b>
+            <b class="cjtn">Conjuction</b>
+            <b class="ijtn">Interjection</b>
+            <b class="punc">Punctuation</b>
+            <b class="fw">Foreign Word</b>
+            <b class="oov">Out Of Vocabulary</b>
+            <b class="rp">Particle</b>
+            <b class="pstn">Preposition</b>
+            <b class="ntrg">Interrogative</b>
+        </div>
         <div class="actions">
             <div>
                 <form id="uploadForm" method="post" enctype="multipart/form-data" action="{% url 'read' %}">
@@ -170,6 +219,14 @@
         return cookieValue;
     }
     
+    function changeClass(event) {
+        var id = event.target.id
+        var tag = event.target.value.toLowerCase()
+        $(`#${id}`).attr("class", `pos-content ${tag}`)
+        if (tag === "?") {
+            $(`#${id}`).attr("class", `pos-content punc`)
+        }
+    }
     
 </script>
 </html>
