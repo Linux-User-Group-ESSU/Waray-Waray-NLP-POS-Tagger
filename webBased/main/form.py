@@ -7,7 +7,7 @@ class FileUploadForm(forms.ModelForm):
         fields = ['file']
         widgets = {
             'file' : forms.FileInput(attrs={
-                'accept' : '.txt',
+                'accept' : '.txt,.csv',
                 'onchange' : 'uploadFile()'
             })
         }
