@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/static/jquery.min.js"></script>
+    <script src="/static/toastr.min.js" defer></script>
+    <link rel="stylesheet" href="/static/toastr.min.css">
     <style>
         body {
             background-color: antiquewhite;
@@ -116,7 +118,20 @@
                 </form>
             </div>
             <div>
+                <p>Current File: <b id="current_file"></b></p>
+            </div>
+            <div>
                 <button onclick="download()" id="dl">Download</button>
+                <button onclick="saveSever()" style="margin-left: 20px;">Save</button>
+            </div>
+            <div>
+                Select a file:
+                <select name="server-file" id="server-file" onchange="changeData()">
+                    <option selected value="None">---------</option>
+                    {% for i in files %}
+                        <option value="{{i.id}}">{{i.file}}</option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
         <div class="pos-tag">
@@ -128,11 +143,22 @@
     </div>
 </body>
 <script>
+    async function changeData() {
+        id = $("#server-file").val()
+        if (id !== "None") {
+            response = await fetch(`{% url 'readDb'%}?id=${id}`)
+            data = await response.json()
+
+            $("#current_file").html(data.filename)
+            $(".pos-container").html(data.html)
+            toastr.success(`Loaded ${data.filename}!`, "Success")
+        }
+    }
     function resizeInput(input) {
         input.style.width = (input.value.length + 1) + "ch";
     }
 
-    function download() {
+    async function download() {
         var posContainers = document.getElementsByClassName("pos-data")[0].getElementsByClassName("pos-container");
         var csvContent = "Word,Tag\n";
         
@@ -147,8 +173,8 @@
                 var wordTag = word_data[j];
                 var inputs = wordTag.getElementsByClassName("pos-content");
 
-                var wordValue = inputs[0].value; //Word
-                var tagValue = inputs[1].value;  //Tag
+                var wordValue = inputs[0].value.trim(); //Word
+                var tagValue = inputs[1].value.trim();  //Tag
 
                 if (wordValue.trim() !== "") {
                     if (wordValue === ".") {
@@ -165,6 +191,7 @@
             alert("No Data!")
         }
         else {
+            return_code = await fetch(`{% url 'download' %}?data=${csvContent}`)
             // Create a Blob containing the CSV content
             var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
         
@@ -199,7 +226,14 @@
                 "X-CSRFToken": csrftoken
             },
             success: function(response) {
-                $(".pos-container").html(response.html)
+                if (response.code === 200) {
+                    $(".pos-container").html(response.html)
+                    toastr.success("Uploaded")
+                    $("#current_file").html(response.name)
+                }   
+                else {
+                    toastr.error(response.error_data, "Error");
+                }
             }
         })
     }
@@ -226,6 +260,64 @@
         if (tag === "?") {
             $(`#${id}`).attr("class", `pos-content punc`)
         }
+    }
+
+    async function saveSever() {
+
+        let posContainers1 = document.getElementsByClassName("pos-data")[0].getElementsByClassName("pos-container");
+        let csvContent1 = "Word,Tag\n";
+
+        let datas = []
+        // Iterate through each pos-container element
+        for (var i = 0; i < posContainers1.length; i++) {
+            var posContainer1 = posContainers1[i];
+            var word_data1 = posContainer1.getElementsByClassName("word-tag");
+    
+            // Iterate through each .word-tag element
+            for (var j = 0; j < word_data1.length; j++) {
+                var wordTag1 = word_data1[j];
+                var inputs1 = wordTag1.getElementsByClassName("pos-content");
+
+                var wordValue1 = inputs1[0].value.trim(); //Word
+                var tagValue1 = inputs1[1].value.trim();  //Tag
+
+                if (wordValue1.trim() !== "") {
+                    datas.push({"word" : wordValue1, "tag" : tagValue1})
+                }
+            }
+        }
+
+        if (datas.length === 0) {
+            toastr.error("No active file!")
+        }
+
+        else {
+            toastr.info("Saving!")
+
+            var csrftoken = getCookie('csrftoken');
+            file = $("#current_file").html()
+
+            dataTosend = JSON.stringify({data : datas, filename : file})
+
+            return_req = await fetch("{% url 'save'%}", {
+                method: "POST",
+                headers : {
+                    'Content-Type': 'application/json' ,
+                    "X-CSRFToken": csrftoken
+                },
+                body : dataTosend
+            })
+
+            return_data = await return_req.json()
+            
+            if (return_data.code === 200) {
+                toastr.success("Save!")
+            }
+            else {
+                toastr.error("Error saving the file!")
+            }
+        }
+
     }
     
 </script>
