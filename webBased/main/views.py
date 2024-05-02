@@ -144,7 +144,7 @@ def save_in_server(request):
                 word = i["word"].strip()
                 tag = i["tag"].strip()
 
-                if word == "." or tag == "?" or tag == "!":
+                if word == "." or word == "?" or word == "!":
                     sentence.append(f"{word}|{tag}")
                     writer.writerow(sentence)
                     sentence.clear()
