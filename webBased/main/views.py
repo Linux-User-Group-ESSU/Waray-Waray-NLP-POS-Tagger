@@ -120,6 +120,7 @@ def read_file_content(request):
             html = create_html(str(file_path.file))
             data_return["code"] = 200
             data_return["name"] = str(file_path.file).removeprefix("media/")
+            data_return['file_id'] = file_path.pk
             data_return["html"] = html
         
         else:
