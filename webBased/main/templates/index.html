@@ -6,7 +6,9 @@
     <title>Document</title>
     <script src="/static/jquery.min.js"></script>
     <script src="/static/toastr.min.js" defer></script>
+    <script src="/static/select2.min.js"></script>
     <link rel="stylesheet" href="/static/toastr.min.css">
+    <link rel="stylesheet" href="/static/select2.min.css">
     <style>
         body {
             background-color: antiquewhite;
@@ -126,7 +128,7 @@
             </div>
             <div>
                 Select a file:
-                <select name="server-file" id="server-file" onchange="changeData()">
+                <select name="server-file" id="server-file" onchange="changeData()" style="width: 10dvw;">
                     <option selected value="None">---------</option>
                     {% for i in files %}
                         <option value="{{i.id}}">{{i.file}}</option>
@@ -143,6 +145,10 @@
     </div>
 </body>
 <script>
+    $(document).ready(function() {
+        $('#server-file').select2({
+        })
+    })
     async function changeData() {
         id = $("#server-file").val()
         if (id !== "None") {
