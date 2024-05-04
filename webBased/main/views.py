@@ -40,6 +40,7 @@ def tag(words):
     with open(model_path, "rb") as model:
         tagger = dill.load(model)
         word_tokenize = tokenize_text(words)
+        print(tagger.tag(word_tokenize))
         return tagger.tag(word_tokenize)
 
 def index(request):
@@ -56,9 +57,15 @@ def index(request):
     }
     return render(request, "index.html", context)
 
-def create_html(file_path):
+def create_html(file_path, id = None):
     html = ""
     if file_path.endswith(".txt"):
+        
+        sentences = []
+        new_path = file_path.replace(".txt", ".csv")
+        to_csv = open(new_path, "w")
+        to_csv_writer = csv.writer( to_csv)
+        
         with open(file_path, "r") as read:
             data = read.readlines()
             count = 0
@@ -67,20 +74,32 @@ def create_html(file_path):
                 if b:
                     tagged = tag(b.strip())
                     for i, j in tagged:
-                        if i.split() != "&":
-                            wordTag = j.lower()
-                            if j == "?":
-                                wordTag = "punc"
-                            html += f"""
-                                <div class="word-tag">
-                                    <input type="text" value="{i}" class="pos-content">
-                                    <br>
-                                    <input type="text" value="{j}" class="pos-content {wordTag}" onkeyup="changeClass(event)" id="{count}">
-                                </div>
-                            """
-                            if i == "." or i == "!" or i == "?":
-                                html += "<div class='new-tag'></div>"  
-                            count += 1          
+                        wordTag = j.lower()
+                        if j == "?":
+                            wordTag = "punc"
+                        html += f"""
+                            <div class="word-tag">
+                                <input type="text" value="{i}" class="pos-content">
+                                <br>
+                                <input type="text" value="{j}" class="pos-content {wordTag}" onkeyup="changeClass(event)" id="{count}">
+                            </div>
+                        """
+                        sentences.append(f"{i}|{j}")
+                        if i == "." or i == "!" or i == "?":
+                            html += "<div class='new-tag'></div>"  
+                            to_csv_writer.writerow(sentences)
+                            sentences.clear()
+                        count += 1
+
+        if sentences:
+            to_csv_writer.writerow(sentences)
+        to_csv.close()
+        FileUploaded.objects.filter(id=id).update(
+            file = new_path
+        )
+
+        os.remove(file_path)
+
     else:
         with open(file_path, "r") as csvData:
             count = 0
@@ -115,9 +134,10 @@ def read_file_content(request):
         if file_data.is_valid():
             save = file_data.save()
 
+            html = create_html(str(save.file), save.pk)
+
             file_path = FileUploaded.objects.get(id=save.pk)
 
-            html = create_html(str(file_path.file))
             data_return["code"] = 200
             data_return["name"] = str(file_path.file).removeprefix("media/")
             data_return['file_id'] = file_path.pk
@@ -151,6 +171,9 @@ def save_in_server(request):
                     sentence.clear()
                 else:
                     sentence.append(f"{word}|{tag}")
+            
+            if sentence:
+                writer.writerow(sentence)
 
     else:
         data_return['code'] = 403
