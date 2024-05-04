@@ -154,10 +154,15 @@
         if (id !== "None") {
             response = await fetch(`{% url 'readDb'%}?id=${id}`)
             data = await response.json()
-
-            $("#current_file").html(data.filename)
-            $(".pos-container").html(data.html)
-            toastr.success(`Loaded ${data.filename}!`, "Success")
+            
+            if (data.err) {
+                toastr.error(`${data.err}!`, "Error")
+            }
+            else {
+                $("#current_file").html(data.filename)
+                $(".pos-container").html(data.html)
+                toastr.success(`Loaded ${data.filename}!`, "Success")
+            }
         }
     }
     function resizeInput(input) {
