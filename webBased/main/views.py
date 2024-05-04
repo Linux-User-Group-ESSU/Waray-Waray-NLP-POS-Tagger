@@ -40,7 +40,6 @@ def tag(words):
     with open(model_path, "rb") as model:
         tagger = dill.load(model)
         word_tokenize = tokenize_text(words)
-        print(tagger.tag(word_tokenize))
         return tagger.tag(word_tokenize)
 
 def index(request):
@@ -101,27 +100,30 @@ def create_html(file_path, id = None):
         os.remove(file_path)
 
     else:
-        with open(file_path, "r") as csvData:
-            count = 0
-            for i in csv.reader(csvData):
-                for j in i:
-                    if j.strip("\n").strip():
-                        word = j.split("|")[0]
-                        tag_ = j.split("|")[1]
-                        if word != "&":
-                            if tag_ == "?":
-                                tag_ = "punc"
-                            
-                            html += f"""
-                                <div class="word-tag">
-                                    <input type="text" value="{word}" class="pos-content">
-                                    <br>
-                                    <input type="text" value="{tag_}" class="pos-content {tag_.lower()}" onkeyup="changeClass(event)" id="{count}">
-                                </div>
-                            """
-                            if word == "." or word == "!" or word == "?":
-                                html += "<div class='new-tag'></div>"  
-                            count += 1  
+        try:
+            with open(file_path, "r") as csvData:
+                count = 0
+                for i in csv.reader(csvData):
+                    for j in i:
+                        if j.strip("\n").strip():
+                            word = j.split("|")[0]
+                            tag_ = j.split("|")[1]
+                            if word != "&":
+                                if tag_ == "?":
+                                    tag_ = "punc"
+                                
+                                html += f"""
+                                    <div class="word-tag">
+                                        <input type="text" value="{word}" class="pos-content">
+                                        <br>
+                                        <input type="text" value="{tag_}" class="pos-content {tag_.lower()}" onkeyup="changeClass(event)" id="{count}">
+                                    </div>
+                                """
+                                if word == "." or word == "!" or word == "?":
+                                    html += "<div class='new-tag'></div>"  
+                                count += 1  
+        except FileNotFoundError:
+            raise FileNotFoundError("File doesn't exist!")
     
     return html
 
@@ -183,6 +185,12 @@ def readDb(request):
     id = request.GET.get("id")
     filename = FileUploaded.objects.get(id=id)
 
-    html = create_html(str(filename.file))
+    error = None
 
-    return JsonResponse({"html" : html, "filename" : str(filename.file).removeprefix("media/")})
+    try:
+        html = create_html(str(filename.file))
+    except FileNotFoundError as e:
+        error = str(e)
+        html = ""
+
+    return JsonResponse({"html" : html, "filename" : str(filename.file).removeprefix("media/"), "err" : error})
