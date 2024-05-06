@@ -9,7 +9,7 @@ from  .models import FileUploaded
 # Create your views here.
 
 def tokenize_text(text):
-    punctuation = r".!?,'{}[]()@#$%^&*/"
+    punctuation = r'.!?,{}[]()@#$%;^&*/"'
 
     tokens = []
     current_word = ""
@@ -20,6 +20,8 @@ def tokenize_text(text):
                 tokens.append(current_word)
             current_word = ""
         elif char in punctuation:
+            tokens.append(current_word)
+            current_word = ""
         # Add punctuation as a separate token
             tokens.append(char)
         else:
